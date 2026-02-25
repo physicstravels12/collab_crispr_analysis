@@ -1,0 +1,51 @@
+R-based rerun summary (2026-02-24)
+Dataset: /Users/ninaanikeeva/Desktop/MIT/research/bio/singlets.h5ad
+
+Canonical perturbation inference source:
+- R sceptre outputs in r_sceptre/outputs/
+- Mirrored to sceptre/on_target_results.csv and sceptre/discovery_merged.csv
+- result_source.csv confirms source = R_sceptre
+
+On-target (R sceptre, expressed-only pair set):
+- pairs tested: 292
+- pass_qc: 282
+- significant (FDR<0.1): 0
+- fraction negative log2FC: 0.5106
+- mean log2FC: -0.0028
+
+Expression-aware on-target filter:
+- n_on_target_total: 292
+- n_on_target_expressed: 292
+- direction_matches_expectation (negative): 144/292
+
+Scanpy Wilcoxon baseline:
+- global output: scanpy/de_global_wilcoxon.csv
+- per-target output: scanpy/de_per_target_wilcoxon.csv
+- per-target summary: scanpy/de_top_hits_summary.csv
+- targets with >=1 significant gene in top-N table: 7
+
+UMAP + Leiden:
+- embeddings: scanpy/embeddings_umap.csv
+- cluster sizes: scanpy/leiden_cluster_sizes.csv
+- resolution sweep plots and QC overlays in figures/
+
+QC/marker add-ons:
+- scanpy/cluster_markers_topN.csv
+- scanpy/cluster_composition_control_vs_perturbed.csv
+- scanpy/cluster_composition_by_target.csv
+
+Perturbation burden (updated):
+- control_mean_burden_n: 8.745
+- perturbed_mean_burden_n: 8.925
+- control_mean_burden_weighted: 0.801
+- perturbed_mean_burden_weighted: 0.805
+
+Hallmark pathway analysis:
+- Fetch resolved by local GMT: pathways/h.all.v2024.1.Hs.symbols.gmt
+- Global Hallmark results produced: pathways/hallmark_global.csv (50 pathways)
+- Top significant global programs (FDR<0.1):
+  - HALLMARK_E2F_TARGETS (NES -1.82, FDR 0)
+  - HALLMARK_G2M_CHECKPOINT (NES -1.57, FDR 0.029)
+  - HALLMARK_MTORC1_SIGNALING (NES -1.47, FDR 0.043)
+  - HALLMARK_MYC_TARGETS_V1 (NES -1.43, FDR 0.049)
+- Target-level Hallmark is empty in this on-target-only run because each target contributes one tested gene (insufficient ranked list length for prerank pathway inference).

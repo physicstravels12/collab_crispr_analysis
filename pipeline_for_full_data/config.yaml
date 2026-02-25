@@ -1,0 +1,74 @@
+data:
+  h5ad_path: /Users/ninaanikeeva/Desktop/MIT/research/bio/singlets.h5ad
+  results_root: /Users/ninaanikeeva/Desktop/MIT/research/bio/results1/sceptre_realdata
+
+analysis:
+  control_column: control_cell
+  assigned_guide_column: assigned_guide
+  min_cells_per_target: 30
+  trans_panel_size: 150
+  min_detection_fraction: 0.05
+  cpm_scale: 10000.0
+  fdr_alpha: 0.1
+  seed: 42
+  discovery_mode: on_target_only
+  top_targets_umap_label: 10
+
+sceptre:
+  moi: low
+  control_group: nt_cells
+  resampling_mechanism: permutations
+  side: both
+  multiple_testing_method: BH
+  multiple_testing_alpha: 0.1
+  assign_method: thresholding
+  assign_threshold: 1
+  run_qc:
+    response_n_umis_range: [0.01, 0.99]
+    response_n_nonzero_range: [0.01, 0.99]
+    n_nonzero_trt_thresh: 7
+    n_nonzero_cntrl_thresh: 7
+  B1: 99
+  B2: 499
+
+execution:
+  pilot_n_targets: 25
+  batch_size_targets: 25
+  run_full: true
+  single_run: true
+
+pathways:
+  hallmark_gmt: /Users/ninaanikeeva/Desktop/MIT/research/bio/results1/sceptre_realdata/pathways/h.all.v2024.1.Hs.symbols.gmt
+  top_n_pathways_plot: 20
+
+perturbation_burden:
+  z_abs_threshold: 2.0
+
+scanpy_de:
+  enabled: true
+  de_scope: global_and_per_target
+  method: wilcoxon
+  fdr_alpha: 0.1
+  min_cells_per_target: 30
+  top_n_genes_export: 300
+
+scanpy_cluster:
+  enabled: true
+  n_hvgs: 3000
+  n_pcs: 30
+  neighbors_k: 20
+  umap_min_dist: 0.3
+  umap_spread: 1.0
+  leiden_resolutions: [0.3, 0.5, 0.8, 1.0]
+  default_resolution: 0.5
+
+on_target_expression_filter:
+  enabled: true
+  metric: control_detect_frac
+  threshold: 0.05
+  control_mean_cpm_floor: 0.0
+
+extras_qc_markers:
+  enabled: true
+  top_markers_per_cluster: 20
+  min_cells_per_cluster_composition: 20

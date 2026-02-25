@@ -1,0 +1,5 @@
+,perturbation_burden_n,perturbation_burden_n,perturbation_burden_n,perturbation_burden_weighted,perturbation_burden_weighted,perturbation_burden_weighted
+,mean,median,std,mean,median,std
+control_cell,,,,,,
+False,8.924791176186023,7.0,7.264669165289561,0.8046874,0.7847456,0.16110282
+True,8.745214802211825,7.0,7.223200907316464,0.80142313,0.781905,0.15932581

@@ -1,0 +1,5 @@
+responsive_gene_count=200
+control_mean_burden_n=8.745
+perturbed_mean_burden_n=8.925
+control_mean_burden_weighted=0.801
+perturbed_mean_burden_weighted=0.805

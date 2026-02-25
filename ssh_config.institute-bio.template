@@ -1,0 +1,6 @@
+Host institute-bio
+  HostName <SERVER_FQDN_OR_IP>
+  User <USERNAME>
+  IdentityFile ~/.ssh/id_ed25519
+  ServerAliveInterval 30
+  ServerAliveCountMax 120

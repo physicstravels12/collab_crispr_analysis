@@ -1,0 +1,17 @@
+# System
+.DS_Store
+
+# Python caches
+__pycache__/
+*.pyc
+.cache/
+.mplconfig/
+
+# Large/local data
+*.h5ad
+*.mtx
+r_sceptre/inputs/
+results_snapshot_current_data/r_sceptre/inputs/
+
+# Logs
+*.log
