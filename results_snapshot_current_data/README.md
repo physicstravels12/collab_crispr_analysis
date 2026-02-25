@@ -1,7 +1,7 @@
 # Real-data SCEPTRE pipeline (`singlets.h5ad`)
 
 This folder contains a reproducible analysis workflow for:
-- on-target knockdown with `sceptre-python`,
+- on-target knockdown with R `sceptre` as canonical source,
 - Scanpy Wilcoxon DE baseline (global + per-target),
 - UMAP + Leiden clustering (resolution sweep),
 - expression-aware on-target filtering,
@@ -11,7 +11,7 @@ This folder contains a reproducible analysis workflow for:
 
 ## Files
 - `config.yaml`: all thresholds, run sizing, and output paths.
-- `run_sceptre_realdata.py`: SCEPTRE discovery run.
+- `run_sceptre_realdata.py`: legacy non-canonical SCEPTRE discovery script.
 - `run_scanpy_wilcoxon_baseline.py`: global and per-target Wilcoxon DE baseline.
 - `run_scanpy_umap_leiden.py`: UMAP embedding + Leiden clustering.
 - `run_on_target_expression_aware.py`: expression-aware on-target post-filtering.

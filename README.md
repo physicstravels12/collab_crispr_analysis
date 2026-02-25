@@ -5,7 +5,7 @@ This repository packages two things in one place:
 - `results_snapshot_current_data/`: a frozen snapshot of analysis outputs from the current subset dataset.
 - `pipeline_for_full_data/`: the runnable pipeline collaborators should use on larger/full datasets.
 
-The canonical perturbation inference source in this repo is **R `sceptre`** (not the deprecated Python port).
+The canonical perturbation inference source in this repo is **R `sceptre`**.
 
 ## Why this repo exists
 This project analyzes single-cell CRISPR perturbation data with emphasis on:
@@ -15,7 +15,7 @@ This project analyzes single-cell CRISPR perturbation data with emphasis on:
 - pathway-level shifts (Hallmark),
 - per-cell perturbation burden.
 
-A previous Python `sceptre` route showed directionality inconsistencies for on-target fold-changes in this data context. For that reason, this repo standardizes on **R `sceptre`** output, then performs downstream analyses in Python.
+This repo standardizes on **R `sceptre`** output for perturbation inference, then performs downstream analyses in Python.
 
 ## Repository structure
 
